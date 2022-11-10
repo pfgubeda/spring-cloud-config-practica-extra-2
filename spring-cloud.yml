@@ -1,6 +1,6 @@
 spring:
-    mvc:
-      pathmatch:
+  mvc:
+    pathmatch:
         matching-strategy: ant_path_matcher
   sleuth:
     sampler:
