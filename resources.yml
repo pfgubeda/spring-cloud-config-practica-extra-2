@@ -14,7 +14,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-
+app:
+  environment:
+    gateway-server-host: ${gateway-server-host:localhost}
 
 
 --- # Testing configuration
@@ -42,4 +44,3 @@ spring:
 app:
   environment:
     resources-host: none
-    gateway-server-host: ${gateway-server-host:localhost}
