@@ -6,7 +6,7 @@ spring:
     activate:
       on-profile: default
   application:
-    name: clothing
+    name: resources
   datasource:
     url: jdbc:mysql://${resources-db:localhost}:3306/resources-db
     username: root
