@@ -8,7 +8,7 @@ spring:
   application:
     name: clothing
   datasource:
-    url: jdbc:mysql://${resources-db:localhost}:3308/resources-db
+    url: jdbc:mysql://${resources-db:localhost}:3306/resources-db
     username: root
     password: root
   jpa:
