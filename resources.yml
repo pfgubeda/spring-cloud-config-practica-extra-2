@@ -42,3 +42,4 @@ spring:
 app:
   environment:
     resources-host: none
+    gateway-server-host: ${gateway-server-host:localhost}
