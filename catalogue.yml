@@ -6,9 +6,9 @@ spring:
     activate:
       on-profile: default
   application:
-    name: resources
+    name: catalogue
   datasource:
-    url: jdbc:mysql://${resources-db:localhost}:3306/resources-db
+    url: jdbc:mysql://${catalogue-db:localhost}:3306/catalogue-db
     username: root
     password: root
   jpa:
@@ -43,4 +43,4 @@ spring:
 
 app:
   environment:
-    resources-host: none
+    catalogue-host: none
