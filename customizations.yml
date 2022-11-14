@@ -1,0 +1,46 @@
+server:
+  port: 8084
+
+spring:
+  config:
+    activate:
+      on-profile: default
+  application:
+    name: customizations
+  datasource:
+    url: jdbc:mysql://${customizations-db:localhost}:3306/customizations-db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+app:
+  environment:
+    gateway-server-host: ${gateway-server-host:localhost}
+
+
+--- # Testing configuration
+
+server:
+  port: ${random.int(5000,5100)}
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  application:
+    name: clothing
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: pablo
+    password: pablo
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  environment:
+    customizations-host: none
