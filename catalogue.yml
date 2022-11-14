@@ -1,0 +1,46 @@
+server:
+  port: 8083
+
+spring:
+  config:
+    activate:
+      on-profile: default
+  application:
+    name: resources
+  datasource:
+    url: jdbc:mysql://${resources-db:localhost}:3306/resources-db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+app:
+  environment:
+    gateway-server-host: ${gateway-server-host:localhost}
+
+
+--- # Testing configuration
+
+server:
+  port: ${random.int(5000,5100)}
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  application:
+    name: clothing
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: pablo
+    password: pablo
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  environment:
+    resources-host: none
